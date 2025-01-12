@@ -24,6 +24,11 @@ namespace WebApi.Controllers
             return _Service.GetAllUsersAsync();
         }
 
+        [HttpGet("{FirstName}")]
+        public async Task<User> GetUserByName(string FirstName){
+           return await _Service.GetUserByNameAsync(FirstName);
+        }
+
         [HttpPost]
         public async Task<User> CreateUser(UserDTO user){
             return await _Service.CreateUserAsync(user);

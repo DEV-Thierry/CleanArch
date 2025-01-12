@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using Application.Interfaces;
 using Application.UseCases;
 using CleanArch.Infrastructure.Context;
@@ -43,9 +44,15 @@ namespace CleanArch.Infrastructure.Repositories
             return users;
         }
 
-        public Task<User> GetUserByNameAsync(string firstName)
+        public async Task<User> GetUserByNameAsync(string firstName)
         {
-            throw new NotImplementedException();
+            if(firstName == null) throw new ArgumentNullException("firstName", "The user's first name is required");
+
+            var user = await _context.Users.Where(x => x.FirstName == firstName && x.Ativo).FirstOrDefaultAsync();
+
+            if(user == null) throw new SqlNullValueException("user was not found");
+
+            return user;
         }
 
         public Task<User> UpdateUserAsync(User user)
