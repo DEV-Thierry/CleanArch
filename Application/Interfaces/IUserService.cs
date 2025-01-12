@@ -1,10 +1,11 @@
+using Application.DTO;
 using Domain.Entities;
 
 namespace Application.Interfaces
 {
     public interface IUserService
     {
-        Task<User> CreateUserAsync(User user);
+        Task<User> CreateUserAsync(UserDTO userDTO);
 
         // Task<User> GetUserByIdAsync(int id);
 

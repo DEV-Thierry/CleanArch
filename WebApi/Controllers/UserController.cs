@@ -1,3 +1,4 @@
+using Application.DTO;
 using Application.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<User> CreateUser(User user){
+        public async Task<User> CreateUser(UserDTO user){
             return await _Service.CreateUserAsync(user);
         }
     }

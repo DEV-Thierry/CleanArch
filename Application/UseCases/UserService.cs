@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Application.DTO;
 using Application.Interfaces;
 using Domain.Entities;
 
@@ -14,9 +15,14 @@ namespace Application.UseCases
             _userRepository = userRepository;
         }
 
-        public async Task<User> CreateUserAsync(User user)
+        public async Task<User> CreateUserAsync(UserDTO userDTO)
         {
-            if(user.FirstName == null) throw new Exception("Primeiro Nome Obrigatorio");
+            var user = User.Create(
+                userDTO.FirstName,
+                userDTO.LastName,
+                userDTO.Email,
+                userDTO.Password
+            );
 
             return await _userRepository.AddUserAsync(user);
         }

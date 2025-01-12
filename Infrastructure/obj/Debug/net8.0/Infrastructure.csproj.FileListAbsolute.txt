@@ -17,3 +17,4 @@ D:\Github\Repos\CleanArch\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.
 D:\Github\Repos\CleanArch\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 D:\Github\Repos\CleanArch\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
 D:\Github\Repos\CleanArch\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+d:\Github\Repos\CleanArch\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json

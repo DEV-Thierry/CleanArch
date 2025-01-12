@@ -172,3 +172,4 @@ D:\Github\Repos\CleanArch\WebApi\obj\Debug\net8.0\refint\WebApi.dll
 D:\Github\Repos\CleanArch\WebApi\obj\Debug\net8.0\WebApi.pdb
 D:\Github\Repos\CleanArch\WebApi\obj\Debug\net8.0\WebApi.genruntimeconfig.cache
 D:\Github\Repos\CleanArch\WebApi\obj\Debug\net8.0\ref\WebApi.dll
+d:\Github\Repos\CleanArch\WebApi\obj\Debug\net8.0\WebApi.sourcelink.json

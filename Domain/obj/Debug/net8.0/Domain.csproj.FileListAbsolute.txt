@@ -9,3 +9,4 @@ D:\Github\Repos\CleanArch\Domain\obj\Debug\net8.0\Domain.dll
 D:\Github\Repos\CleanArch\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\Github\Repos\CleanArch\Domain\obj\Debug\net8.0\Domain.pdb
 D:\Github\Repos\CleanArch\Domain\obj\Debug\net8.0\ref\Domain.dll
+d:\Github\Repos\CleanArch\Domain\obj\Debug\net8.0\Domain.sourcelink.json
