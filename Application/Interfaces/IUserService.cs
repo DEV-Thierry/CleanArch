@@ -11,7 +11,7 @@ namespace Application.Interfaces
 
         Task<List<User>> GetAllUsersAsync();
 
-        Task<User> UpdateUserAsync(User user);
+        Task<User> UpdateUserAsync(UserUpdateDTO user);
 
         Task<User> DeleteUserAsync(Guid id);
     }

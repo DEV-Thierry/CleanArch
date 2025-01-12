@@ -1,6 +1,8 @@
 using System.Data.SqlTypes;
+using Application.DTO;
 using Application.Interfaces;
 using Application.UseCases;
+using Azure;
 using CleanArch.Infrastructure.Context;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -55,9 +57,27 @@ namespace CleanArch.Infrastructure.Repositories
             return user;
         }
 
-        public Task<User> UpdateUserAsync(User user)
+        public async Task<User> UpdateUserAsync(UserUpdateDTO user)
         {
-            throw new NotImplementedException();
+            var response = await _context.Users.Where(x => x.Id == user.Id && x.Ativo).FirstOrDefaultAsync();
+
+            if(response == null) throw new Exception("User was not found");
+
+            response = UpdateResponseValues(response, user);
+            
+            _context.Users.Update(response);
+            await _context.SaveChangesAsync();
+
+            return response;
+        }
+
+        private User UpdateResponseValues(User response, UserUpdateDTO request){
+            response.DataAlteracao = DateTime.Now;
+            response.Email = string.IsNullOrWhiteSpace(request.Email)? response.Email : request.Email;
+            response.FirstName = string.IsNullOrWhiteSpace(request.FirstName)? response.FirstName : request.FirstName;
+            response.LastName = string.IsNullOrWhiteSpace(request.LastName)? response.LastName : request.LastName;
+
+            return response;
         }
     }
 }

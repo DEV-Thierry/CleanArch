@@ -37,7 +37,7 @@ namespace Application.UseCases
             return await _userRepository.GetAllUsersAsync();
         }
 
-        public async Task<User> UpdateUserAsync(User user)
+        public async Task<User> UpdateUserAsync(UserUpdateDTO user)
         {
             return await _userRepository.UpdateUserAsync(user);
         }

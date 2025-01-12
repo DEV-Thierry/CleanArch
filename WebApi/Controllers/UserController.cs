@@ -18,6 +18,12 @@ namespace WebApi.Controllers
             _Service = userService;
         }
 
+        [HttpPost]
+        public async Task<User> CreateUser(UserDTO user)
+        {
+            return await _Service.CreateUserAsync(user);
+        }
+
         [HttpGet]
         public Task<List<User>> GetAllUsers()
         {
@@ -29,9 +35,9 @@ namespace WebApi.Controllers
            return await _Service.GetUserByNameAsync(FirstName);
         }
 
-        [HttpPost]
-        public async Task<User> CreateUser(UserDTO user){
-            return await _Service.CreateUserAsync(user);
+        [HttpPut]
+        public async Task<User> UpdateUser(UserUpdateDTO user){
+            return await _Service.UpdateUserAsync(user);
         }
 
         [HttpDelete]
