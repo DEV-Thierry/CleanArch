@@ -32,7 +32,7 @@ namespace Application.UseCases
             return await _userRepository.GetUserByNameAsync(firstName);
         }
 
-        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        public async Task<List<User>> GetAllUsersAsync()
         {
             return await _userRepository.GetAllUsersAsync();
         }

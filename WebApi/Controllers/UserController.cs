@@ -18,6 +18,12 @@ namespace WebApi.Controllers
             _Service = userService;
         }
 
+        [HttpGet]
+        public Task<List<User>> GetAllUsers()
+        {
+            return _Service.GetAllUsersAsync();
+        }
+
         [HttpPost]
         public async Task<User> CreateUser(UserDTO user){
             return await _Service.CreateUserAsync(user);

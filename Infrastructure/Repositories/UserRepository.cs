@@ -37,9 +37,10 @@ namespace CleanArch.Infrastructure.Repositories
             return user;
         }
 
-        public Task<List<User>> GetAllUsersAsync()
+        public async Task<List<User>> GetAllUsersAsync()
         {
-            throw new NotImplementedException();
+            var users = await _context.Users.Where(x => x.Ativo).ToListAsync();
+            return users;
         }
 
         public Task<User> GetUserByNameAsync(string firstName)

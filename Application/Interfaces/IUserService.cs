@@ -9,7 +9,7 @@ namespace Application.Interfaces
 
         Task<User> GetUserByNameAsync(string firstName);
 
-        Task<IEnumerable<User>> GetAllUsersAsync();
+        Task<List<User>> GetAllUsersAsync();
 
         Task<User> UpdateUserAsync(User user);
 
