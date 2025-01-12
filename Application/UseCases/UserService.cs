@@ -27,25 +27,25 @@ namespace Application.UseCases
             return await _userRepository.AddUserAsync(user);
         }
 
-        // public async Task<User> GetUserByIdAsync(int id)
-        // {
-        //     return await _userRepository.GetUserByIdAsync(id);
-        // }
+        public async Task<User> GetUserByNameAsync(string firstName)
+        {
+            return await _userRepository.GetUserByNameAsync(firstName);
+        }
 
-        // public async Task<IEnumerable<User>> GetAllUsersAsync()
-        // {
-        //     return await _userRepository.GetAllUsersAsync();
-        // }
+        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        {
+            return await _userRepository.GetAllUsersAsync();
+        }
 
-        // public async Task<User> UpdateUserAsync(User user)
-        // {
-        //     return await _userRepository.UpdateUserAsync(user);
-        // }
+        public async Task<User> UpdateUserAsync(User user)
+        {
+            return await _userRepository.UpdateUserAsync(user);
+        }
 
-        // public async Task<User> DeleteUserAsync(int id)
-        // {
-        //     return await _userRepository.DeleteUserAsync(id);
-        // }
+        public async Task<User> DeleteUserAsync(Guid id)
+        {
+            return await _userRepository.DeleteUserAsync(id);
+        }
     }
 
 }

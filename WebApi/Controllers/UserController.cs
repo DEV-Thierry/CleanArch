@@ -22,5 +22,10 @@ namespace WebApi.Controllers
         public async Task<User> CreateUser(UserDTO user){
             return await _Service.CreateUserAsync(user);
         }
+
+        [HttpDelete]
+        public async Task<User> DeleteUser(Guid id){
+            return await _Service.DeleteUserAsync(id);
+        }
     }
 }

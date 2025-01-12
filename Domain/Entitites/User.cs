@@ -7,13 +7,13 @@ namespace Domain.Entities
     public class User
     {
         public Guid Id { get; private set; }
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string Email { get; private set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
         public string Password { get; private set; }
         public DateTime DataInclusao {get; private set;}
-        public DateTime DataAlteracao {get; private set;}
-        public bool Ativo { get; private set; }
+        public DateTime DataAlteracao {get; set;}
+        public bool Ativo { get; set; }
 
         public User(Guid id, string firstName, string lastName, string email, string password, bool ativo)
         {

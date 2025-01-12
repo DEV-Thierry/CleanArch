@@ -2,6 +2,7 @@ using Application.Interfaces;
 using Application.UseCases;
 using CleanArch.Infrastructure.Context;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace CleanArch.Infrastructure.Repositories
 {
@@ -24,24 +25,31 @@ namespace CleanArch.Infrastructure.Repositories
             return response.Entity;
         }
 
-        // public Task<User> DeleteUserAsync(int id)
-        // {
-        //     throw new NotImplementedException();
-        // }
+        public async Task<User> DeleteUserAsync(Guid id)
+        {
+            var user = await _context.Users.Where(x => x.Id == id).FirstOrDefaultAsync();
+            if(user == null) throw new Exception("usuario com o id fornecido nao foi encontrado ");
 
-        // public Task<List<User>> GetAllUsersAsync()
-        // {
-        //     throw new NotImplementedException();
-        // }
+            user.Ativo = false;
+            _context.Users.Update(user);
+            _context.SaveChanges();
 
-        // public Task<User> GetUserByIdAsync(int id)
-        // {
-        //     throw new NotImplementedException();
-        // }
+            return user;
+        }
 
-        // public Task<User> UpdateUserAsync(User user)
-        // {
-        //     throw new NotImplementedException();
-        // }
+        public Task<List<User>> GetAllUsersAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<User> GetUserByNameAsync(string firstName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<User> UpdateUserAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
