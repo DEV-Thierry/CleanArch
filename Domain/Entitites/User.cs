@@ -11,8 +11,8 @@ namespace Domain.Entities
         public string LastName { get; private set; }
         public string Email { get; private set; }
         public string Password { get; private set; }
-        public DateTimeOffset? DataInclusao {get; private set;}
-        public DateTimeOffset? DataAlteracao {get; private set;}
+        public DateTime DataInclusao {get; private set;}
+        public DateTime DataAlteracao {get; private set;}
         public bool Ativo { get; private set; }
 
         public User(Guid id, string firstName, string lastName, string email, string password, bool ativo)
@@ -42,7 +42,7 @@ namespace Domain.Entities
         public static User Create(string firstName, string lastName, string email, string password){
             var user = new User(Guid.NewGuid(), firstName, lastName, email, password, true);
             user.IsValidEmail();
-            user.DataInclusao = DateTimeOffset.UtcNow;
+            user.DataInclusao = DateTime.Now;
             return user;
         }
     }
