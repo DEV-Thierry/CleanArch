@@ -41,6 +41,7 @@ namespace Domain.Entities
 
         public static User Create(string firstName, string lastName, string email, string password){
             var user = new User(Guid.NewGuid(), firstName, lastName, email, password, true);
+            user.Password = BCrypt.Net.BCrypt.HashPassword(password,10);
             user.IsValidEmail();
             user.DataInclusao = DateTime.Now;
             return user;
